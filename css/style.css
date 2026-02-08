@@ -130,34 +130,35 @@ button:focus-visible,
 }
 
 h1 {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-size: clamp(36px, 5vw, 64px);
     font-weight: 700;
     line-height: 1.1;
+    color: var(--grey-dark);
     margin-bottom: var(--spacing-md);
     letter-spacing: -0.02em;
     opacity: 0;
     animation: fadeInUp 0.8s ease 0.2s forwards;
 }
 
-.hero h1 span {
+/* Only the rotating word gets orange + Nunito */
+.rotating-word {
+    display: inline-block;
     color: var(--burnt-orange);
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-weight: 800;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Brand name gets Nunito but stays dark */
+.hero-brand {
     font-family: 'Nunito', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     font-weight: 800;
 }
 
-.hero-title-dark {
-    color: var(--grey-dark) !important;
-}
-
-.rotating-word {
-    color: var(--grey-dark);
-    font-family: inherit;
-    font-weight: 700;
-}
-
-/* Inline on desktop (same line), block on mobile (new line) */
-.mobile-break {
-    display: inline;
+/* Keep "gets technical" together as a unit — wraps as one block */
+.hero-nowrap {
+    white-space: nowrap;
 }
 
 .hero-subtitle {
@@ -320,10 +321,10 @@ h1 {
     border-color: rgba(0, 0, 0, 0.12);
 }
 
-/* Card visual header — gradient area with icon + label overlay */
+/* Card visual header — gradient area with icon + title overlay */
 .card-visual {
     position: relative;
-    height: 180px;
+    height: 140px;
     display: flex;
     align-items: flex-end;
     padding: var(--spacing-md);
@@ -381,7 +382,7 @@ h1 {
     font-size: 18px;
 }
 
-/* Slash-command label on the visual */
+/* Card title overlaid on the visual */
 .card-label {
     position: relative;
     font-size: clamp(22px, 3vw, 28px);
@@ -398,13 +399,6 @@ h1 {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-}
-
-.card-body h3 {
-    font-size: 20px;
-    margin-bottom: var(--spacing-xs);
-    font-weight: 600;
-    color: var(--grey-dark);
 }
 
 .card-body p {
@@ -604,11 +598,7 @@ footer p {
    Rotating Word Animation
    ========================================================================== */
 
-/* Single inline span — JS swaps text content, no absolute positioning needed */
-.rotating-word {
-    display: inline-block;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
+/* .rotating-word styles are defined in the Hero section above */
 
 /* ==========================================================================
    Accessibility: Reduced Motion
@@ -657,10 +647,6 @@ footer p {
 }
 
 @media (max-width: 768px) {
-    .mobile-break {
-        display: block;
-    }
-
     .hero {
         min-height: 80vh;
         padding: var(--spacing-md);
@@ -691,6 +677,6 @@ footer p {
     }
 
     .card-visual {
-        height: 150px;
+        height: 120px;
     }
 }
