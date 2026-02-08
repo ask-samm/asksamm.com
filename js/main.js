@@ -25,7 +25,7 @@ revealElements.forEach(el => revealObserver.observe(el));
 const rotatingEl = document.querySelector('.rotating-word');
 
 if (rotatingEl) {
-    const words = ['Onboarding', 'Support', 'Go-To-Market'];
+    const words = ['Onboarding', 'Support', 'Go to Market'];
     let currentIndex = 0;
 
     // Check if user prefers reduced motion
