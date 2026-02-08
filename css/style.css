@@ -155,9 +155,9 @@ h1 {
     font-weight: 700;
 }
 
-/* Line break after rotating word — only visible on mobile */
+/* Inline on desktop (same line), block on mobile (new line) */
 .mobile-break {
-    display: none;
+    display: inline;
 }
 
 .hero-subtitle {
