@@ -292,6 +292,7 @@ h1 {
 
 .services-subtitle {
     color: var(--grey-medium);
+    max-width: 100%;
 }
 
 .services-grid {
@@ -324,10 +325,10 @@ h1 {
 /* Card visual header — gradient area with icon + title overlay */
 .card-visual {
     position: relative;
-    height: 140px;
     display: flex;
-    align-items: flex-end;
-    padding: var(--spacing-md);
+    align-items: center;
+    padding: var(--spacing-sm);
+    height: 64px;
     overflow: hidden;
 }
 
@@ -364,28 +365,27 @@ h1 {
     background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 60%);
 }
 
-/* Icon in top-left of visual area */
+/* Icon inline with title */
 .card-icon {
-    position: absolute;
-    top: var(--spacing-sm);
-    left: var(--spacing-sm);
-    width: 40px;
-    height: 40px;
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    border-radius: 10px;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
-    font-size: 18px;
+    font-size: 14px;
+    margin-right: var(--spacing-xs);
 }
 
-/* Card title overlaid on the visual */
+/* Card title inline with icon */
 .card-label {
     position: relative;
-    font-size: clamp(22px, 3vw, 28px);
+    font-size: clamp(16px, 2vw, 20px);
     font-weight: 700;
     color: var(--white);
     letter-spacing: -0.01em;
@@ -677,6 +677,6 @@ footer p {
     }
 
     .card-visual {
-        height: 120px;
+        height: 60px;
     }
 }
